@@ -18,7 +18,6 @@ class App extends Component {
   }
 
   renderReminders() {
-    console.log(this.props);
     const {reminders} = this.props;
     return (<ul className="list-group col-sm-4">
       {
@@ -57,11 +56,11 @@ class App extends Component {
             type="datetime-local"
             onChange={(event) => this.setState({dueDate: event.target.value})}/>
         </div>
-        <button type="button" className="btn btn-success" onClick={() => this.addReminder()}>Add Reminder</button>
+        <button type="button" className="btn btn-success" onClick={this.addReminder.bind(this)}>Add Reminder</button>
       </div>
       {this.renderReminders()}
       <div className="btn btn-danger"
-        onClick={() => this.props.clearReminders}>Clear Reminders</div>
+        onClick={this.props.clearReminders}>Clear Reminders</div>
     </div>)
   }
 }
