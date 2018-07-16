@@ -14,7 +14,7 @@ const removeById = (state = [], id) =>{
   return state.filter((reminder) => reminder.id !== id)
 }
 
-const reminders = (state = [], action) => {
+export default (state = [], action) => {
   let remind = null;
   state = read_cookie('reminders')
   switch (action.type) {
@@ -32,9 +32,5 @@ const reminders = (state = [], action) => {
      return remind;
     default:
       return state;
-
-
   }
 }
-
-export default reminders;

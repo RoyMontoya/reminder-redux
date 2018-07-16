@@ -69,4 +69,4 @@ function mapStateToProps(state) {
   return {reminders: state}
 }
 
-export default connect(mapStateToProps, {addReminder, deleteReminder, clearReminders})(App)
+export default connect((state) => ({reminders: state}), {addReminder, deleteReminder, clearReminders})(App)
